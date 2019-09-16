@@ -11,6 +11,7 @@ public class Main {
 	// write your code here
         System.out.print("用print输出i:");
         executeFixedRate();
+        
     }
 
 
