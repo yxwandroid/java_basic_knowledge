@@ -1,4 +1,4 @@
-package com.wilson.java;
+package com.wilson.java.scheduled;
 
 public class EchoServer implements Runnable {
     @Override

@@ -1,17 +1,17 @@
-package com.wilson.java;
+package com.wilson.java.scheduled;
 
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class Main {
+public class ScheduledExecutorServiceDemo {
 
     public static void main(String[] args) {
 	// write your code here
         System.out.print("用print输出i:");
         executeFixedRate();
-        
+
     }
 
 
