@@ -1,6 +1,7 @@
 package com.wilson.java.demo;
 
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 
 public class HashMapDemo {
@@ -10,6 +11,11 @@ public class HashMapDemo {
         Map<String, String> hashMap = new HashMap<String, String>();
         hashMap.put("name", "josan");
         String name = hashMap.get("name");
+
+        new Hashtable<>();
+
+
+        System.out.print(1 << 30);
 
     }
 }
