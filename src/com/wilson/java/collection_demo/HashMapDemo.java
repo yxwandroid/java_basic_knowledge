@@ -1,4 +1,4 @@
-package com.wilson.java.demo;
+package com.wilson.java.collection_demo;
 
 import java.util.HashMap;
 import java.util.Hashtable;
