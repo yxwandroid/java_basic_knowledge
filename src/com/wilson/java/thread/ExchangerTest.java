@@ -1,4 +1,4 @@
-package com.wilson.java.wilson.thread;
+package com.wilson.java.thread;
 
 import java.util.concurrent.Exchanger;
 import java.util.concurrent.ExecutorService;

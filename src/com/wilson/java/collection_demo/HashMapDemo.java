@@ -6,8 +6,13 @@ import java.util.Map;
 
 public class HashMapDemo {
 
+    /**
+     * The default initial capacity - MUST be a power of two.
+     *  1左移4位 是16 默认hashmap的长度是16
+     *
+     */
     public final  static void main(String arg[]){
-        System.out.print("----hashMap---------- ");
+//        System.out.print("----hashMap---------- ");
         HashMap<String, String> hashMap = new HashMap<String, String>();
         hashMap.put("name", "josan");
         String name = hashMap.get("name");
@@ -15,7 +20,7 @@ public class HashMapDemo {
         new Hashtable<>();
 
 
-        System.out.print(1 << 30);
+        System.out.print(1 << 10);
 
     }
 }

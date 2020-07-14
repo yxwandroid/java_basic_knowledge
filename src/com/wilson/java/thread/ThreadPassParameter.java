@@ -1,4 +1,4 @@
-package com.wilson.java.wilson.thread;
+package com.wilson.java.thread;
 
 /**
  *
