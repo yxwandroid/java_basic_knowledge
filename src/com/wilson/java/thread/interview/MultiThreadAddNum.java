@@ -1,16 +1,17 @@
-package com.wilson.java.thread;
+package com.wilson.java.thread.interview;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.ReentrantLock;
 
 // 原文链接：https://blog.csdn.net/wzmde007/article/details/79641084
 public class MultiThreadAddNum {
 
-    int count = 0;
+    static int count = 0;
 
     public static void main(String[] args) {
 //        method1();
 //        method2();
-        method3();
+//        method3();
 
     }
 
@@ -125,6 +126,8 @@ public class MultiThreadAddNum {
 
         }
     }
+
+
 
 
 }

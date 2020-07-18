@@ -1,4 +1,4 @@
-package com.wilson.java.thread;
+package com.wilson.java.thread.interview;
 
 //死锁的场景
 // 当两个线程同时拥有一定的资源，但是都缺少对方手上的资源才能进行下一步动作，而去竞争对方的资源，从而都陷入等待的一种场景，这种场景被称为死锁。
