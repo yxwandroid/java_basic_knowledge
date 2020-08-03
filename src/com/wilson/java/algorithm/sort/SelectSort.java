@@ -1,4 +1,4 @@
-package com.wilson.java.algorithm;
+package com.wilson.java.algorithm.sort;
 
 /*选择排序  优于冒泡排序 */
 public class SelectSort {

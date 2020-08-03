@@ -1,4 +1,4 @@
-package com.wilson.java.algorithm;
+package com.wilson.java.algorithm.sort;
 
 /*插入排序优于 选择排序 */
 public class InsertSort {

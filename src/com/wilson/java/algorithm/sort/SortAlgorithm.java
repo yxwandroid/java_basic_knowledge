@@ -1,15 +1,12 @@
-package com.wilson.java.wilson;
+package com.wilson.java.algorithm.sort;
 
 import java.util.Arrays;
 
 /**
  *
- *
  * 排序算法
- *
- * Created by yangxuewu on 2018/7/9.
  */
-public class Demo2 {
+public class SortAlgorithm {
 
 
     public static void main(String[] args) {
@@ -24,6 +21,10 @@ public class Demo2 {
     }
 
 
+    /**
+     * 冒泡排序
+     * @param arr
+     */
     public static void bubbleSort(int[] arr) {
         int temp = 0;
         for (int i = 0; i < arr.length - 1; i++) {

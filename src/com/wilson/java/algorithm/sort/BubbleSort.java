@@ -1,4 +1,4 @@
-package com.wilson.java.algorithm;
+package com.wilson.java.algorithm.sort;
 
 public class BubbleSort {
     public static void main(String[] args) {
@@ -8,20 +8,19 @@ public class BubbleSort {
         for (int num : arr) {
             System.out.print(num + " ");
         }
-
         BubbleSort(arr);
     }
 
 
     /**
      * 冒泡排序
-     *
+     * <p>
      * 外层循环控制趟数  趟数 = arr.length- 1
      *
      * @param arr
      */
     static void BubbleSort(int[] arr) {
-        if (arr == null || arr.length <=1) {
+        if (arr == null || arr.length <= 1) {
             return;
         }
 
@@ -33,7 +32,6 @@ public class BubbleSort {
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
                 }
-
 
 
                 System.out.println();
