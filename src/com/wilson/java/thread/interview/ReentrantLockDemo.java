@@ -12,7 +12,6 @@ class ReentrantLockDemo {
     public Condition condition3 = lock.newCondition();
     private int state = 0;
 
-
     public void start() {
         new ThreadA().start();
         new ThreadB().start();

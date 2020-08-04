@@ -12,34 +12,28 @@ public class DeadLockDemo {
 
     public static void main(String[] args) {
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                synchronized (o1) {
-                    System.out.println("线程1锁o1");
-                    try {
-                        Thread.sleep(1000);
-                        synchronized (o2) {
-                            System.out.println("线程1锁o2");
-                        }
-                    } catch (Exception e) {
-
+        new Thread(() -> {
+            synchronized (o1) {
+                System.out.println("线程1锁o1");
+                try {
+                    Thread.sleep(1000);
+                    synchronized (o2) {
+                        System.out.println("线程1锁o2");
                     }
+                } catch (Exception e) {
+
                 }
             }
         }).start();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                synchronized (o2) {
-                    System.out.println("线程2锁o2");
-                    try {
-                        synchronized (o1) {
-                            System.out.println("线程2锁o1");
-                        }
-                    } catch (Exception e) {
-
+        new Thread(() -> {
+            synchronized (o2) {
+                System.out.println("线程2锁o2");
+                try {
+                    synchronized (o1) {
+                        System.out.println("线程2锁o1");
                     }
+                } catch (Exception e) {
+
                 }
             }
         }).start();
