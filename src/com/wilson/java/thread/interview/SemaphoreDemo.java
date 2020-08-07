@@ -1,4 +1,5 @@
 package com.wilson.java.thread.interview;
+
 import java.util.concurrent.Semaphore;
 
 /**
@@ -8,17 +9,15 @@ import java.util.concurrent.Semaphore;
 public class SemaphoreDemo {
     public static void main(String[] args) {
 
-        int N  = 8;  //八个工人
+        int N = 8;  //八个工人
         Semaphore semaphore = new Semaphore(5); //5台机器
 
         for (int i = 0; i < N; i++) {
-            new Worker(i,semaphore).start();
+            new Worker(i, semaphore).start();
         }
     }
 
-
     static class Worker extends Thread {
-
         private int num;
         private Semaphore semaphore;
 
@@ -27,22 +26,19 @@ public class SemaphoreDemo {
             this.semaphore = semaphore;
         }
 
-
         @Override
         public void run() {
-
             try {
                 semaphore.acquire();
-                System.out.println("工人"+this.num+"   占用了一个机器");
+                System.out.println("工人" + this.num + "   占用了一个机器");
                 Thread.sleep(1000);
-                System.out.println("工人"+this.num+"   释放了一个机器");
+                System.out.println("工人" + this.num + "   释放了一个机器");
                 semaphore.release();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
     }
-
 
 }
 

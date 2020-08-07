@@ -18,7 +18,6 @@ public class CountDownLatchDemo {
         Thread b= new Thread(new MyRunnable("B", latch));
         a.start();
         b.start();
-
         try {
             latch.await();
             Thread c = new Thread(new Runnable() {
@@ -33,7 +32,6 @@ public class CountDownLatchDemo {
         }
 
     }
-
     static class MyRunnable implements Runnable {
 
         private String value;
