@@ -2,22 +2,22 @@ package com.wilson.java.thread;
 
 /**
  * Created by yangxuewu on 2018/8/13.
- *
- *  安全的终止线程的方法
- *  1,使用interrupt 终止线程
- *  2,使用标识符终止线程
+ * <p>
+ * 安全的终止线程的方法
+ * 1,使用interrupt 终止线程
+ * 2,使用标识符终止线程
  */
 public class ThreadWait {
 
 
-    public static void main(String[] args){
-        MyThreadA wilson = new MyThreadA("wilson");
+    public static void main(String[] args) {
+        MyThreadA myThreadA = new MyThreadA("wilson");
 
         MyThreadB myThreadB = new MyThreadB();
         try {
-            wilson.start();
+            myThreadA.start();
             Thread.sleep(600);
-            wilson.interrupt();
+            myThreadA.interrupt();
 
             myThreadB.start();
             Thread.sleep(600);
@@ -44,7 +44,7 @@ class MyThreadA extends Thread {
         super.run();
 
 
-        while (!Thread.currentThread().isInterrupted()){
+        while (!Thread.currentThread().isInterrupted()) {
             System.out.println("run");
 
         }
@@ -56,14 +56,14 @@ class MyThreadA extends Thread {
 
 class MyThreadB extends Thread {
 
-//volatile 保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。
-    private  volatile  boolean on = true ;
+    //volatile 保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。
+    private volatile boolean on = true;
 
     @Override
     public void run() {
         super.run();
 
-        while (on){
+        while (on) {
             System.out.println("run -------B");
 
         }
@@ -72,7 +72,7 @@ class MyThreadB extends Thread {
     }
 
 
-    public void cancel(){
+    public void cancel() {
         on = false;
     }
 }

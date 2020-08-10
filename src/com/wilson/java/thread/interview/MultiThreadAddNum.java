@@ -94,7 +94,6 @@ public class MultiThreadAddNum {
     }
 
 
-    //使用对象锁
     static public void method3() {
         for (int i = 0; i < 20; i++) {
             new Thread(new CountRunnable()).start();
