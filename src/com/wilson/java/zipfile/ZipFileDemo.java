@@ -1,9 +1,6 @@
 package com.wilson.java.zipfile;
 
-/**
- * Created by yangxuewu on 2017/12/3.
- */
-public class Main {
+public class ZipFileDemo {
 
     public static void main(String[] args) {
 

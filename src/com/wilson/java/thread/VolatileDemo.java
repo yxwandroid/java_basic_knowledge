@@ -13,7 +13,7 @@ public class VolatileDemo {
 
     public static void main(String[] args) {
         final VolatileDemo test = new VolatileDemo();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i <=10; i++) {
             new Thread(() -> {
                 for (int j = 0; j < 10; j++) {
                     test.increase();

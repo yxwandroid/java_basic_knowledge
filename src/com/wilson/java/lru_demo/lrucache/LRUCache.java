@@ -1,4 +1,4 @@
-package com.wilson.java.collection_demo.lrucache;
+package com.wilson.java.lru_demo.lrucache;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
