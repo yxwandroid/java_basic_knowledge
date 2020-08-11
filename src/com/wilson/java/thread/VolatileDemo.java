@@ -3,6 +3,7 @@ package com.wilson.java.thread;
 
 /***
  * volatile 保证了可见性和有序性  不保证原子性
+ * 多线程对成员变量的操作对其他线程是透明的
  */
 public class VolatileDemo {
     public volatile int inc = 0;

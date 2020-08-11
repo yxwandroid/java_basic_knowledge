@@ -1,4 +1,4 @@
-package com.wilson.java.thread;
+package com.wilson.java.thread.interrupt;
 
 /**
  * Created by yangxuewu on 2018/8/13.
