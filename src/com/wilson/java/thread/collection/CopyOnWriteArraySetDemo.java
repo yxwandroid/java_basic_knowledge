@@ -1,4 +1,4 @@
-package com.wilson.java.thread;
+package com.wilson.java.thread.collection;
 
 import java.util.concurrent.CopyOnWriteArraySet;
 
