@@ -28,8 +28,7 @@ public class ThreadPoolExecutorDemo {
         ThreadFactory threadFactory = new NameTreadFactory();
 
         RejectedExecutionHandler handler = new MyIgnorePolicy();
-        ThreadPoolExecutor executor = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, unit,
-                workQueue, threadFactory, handler);
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory, handler);
         executor.prestartAllCoreThreads(); // 预启动所有核心线程
 
         for (int i = 1; i <= 10; i++) {
@@ -40,6 +39,8 @@ public class ThreadPoolExecutorDemo {
         System.in.read(); //阻塞主线程
     }
 
+
+    //线程创建工程
     static class NameTreadFactory implements ThreadFactory {
 
         private final AtomicInteger mThreadNum = new AtomicInteger(1);
