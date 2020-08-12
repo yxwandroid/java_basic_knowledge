@@ -14,7 +14,6 @@ public class ReadWriteLockDemo {
     private Object object = null;
     ReadWriteLock readWriteLock = new ReentrantReadWriteLock();
 
-
     public void get() {
         readWriteLock.readLock().lock();
         try {

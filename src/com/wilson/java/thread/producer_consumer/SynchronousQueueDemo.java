@@ -27,11 +27,11 @@ public class SynchronousQueueDemo {
             @Override
             public void run() {
                 System.out.println("put thread start");
-//                try {
-//                    synchronousQueue.put(1);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
+                try {
+                    synchronousQueue.put(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
                 System.out.println("pud thread end");
             }
@@ -40,11 +40,11 @@ public class SynchronousQueueDemo {
             @Override
             public void run() {
                  System.out.println("pud thread2  start");
-//                try {
-//                //    synchronousQueue.put(102);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
+                try {
+                    synchronousQueue.put(102);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 System.out.println("pud thread2 end ");
             }
         });

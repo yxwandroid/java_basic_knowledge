@@ -4,7 +4,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 //多线程交替打印ABC十次的实现方法
-class ReentrantLockDemo {
+class ReentrantLockDemo  {
 
     public ReentrantLock lock = new ReentrantLock();
     public Condition condition1 = lock.newCondition();
@@ -16,7 +16,6 @@ class ReentrantLockDemo {
         new ThreadA().start();
         new ThreadB().start();
         new ThreadC().start();
-
     }
 
     class ThreadA extends Thread {
@@ -31,7 +30,6 @@ class ReentrantLockDemo {
                     System.out.println("A");
                     state++;
                     condition2.signal();
-                    ;
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
@@ -54,7 +52,6 @@ class ReentrantLockDemo {
                     state++;
                     condition3.signal();
                 } catch (Exception e) {
-
                 } finally {
                     lock.unlock();
                 }
@@ -85,10 +82,7 @@ class ReentrantLockDemo {
     }
 
     public static void main(String[] args) {
-
         ReentrantLockDemo reentrantLockDemo = new ReentrantLockDemo();
         reentrantLockDemo.start();
-
-
     }
 }

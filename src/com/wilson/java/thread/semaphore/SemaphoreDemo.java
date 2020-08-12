@@ -1,4 +1,4 @@
-package com.wilson.java.thread.interview;
+package com.wilson.java.thread.semaphore;
 
 import java.util.concurrent.Semaphore;
 

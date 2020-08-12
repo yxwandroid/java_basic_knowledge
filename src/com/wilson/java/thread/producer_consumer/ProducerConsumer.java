@@ -54,9 +54,6 @@ class Producer implements Runnable {
 
 
     private void generateTask() {
-        int taskNum = (int) (Math.random() * 5 + 1);
-        int timestamp = (int) System.currentTimeMillis();
-//        for (int i = 0; i < taskNum; i++) {
         for (int i = 0; i < 4; i++) {
             String task = "Task-" + i;
             taskQueue.addTask(task);

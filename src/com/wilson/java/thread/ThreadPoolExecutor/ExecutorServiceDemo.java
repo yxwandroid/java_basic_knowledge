@@ -18,7 +18,6 @@ public class ExecutorServiceDemo {
         ExecutorServiceDemo  executorServiceDemo=new ExecutorServiceDemo();
         executorServiceDemo.executorService();
 
-
         for (int i = 0; i < 100; i++) {
 
             final int finalI = i;
@@ -29,7 +28,6 @@ public class ExecutorServiceDemo {
                 }
             });
         }
-
     }
 
 
