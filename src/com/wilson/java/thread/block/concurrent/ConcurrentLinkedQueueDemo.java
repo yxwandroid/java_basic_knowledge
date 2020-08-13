@@ -1,22 +1,29 @@
-package com.wilson.java.thread.producer_consumer;
+package com.wilson.java.thread.block.concurrent;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
-
-public class BlockingQueueDemo {
+/**
+ * 非阻塞队列
+ * 添加方法
+ * add
+ * offer
+ * 移出方法
+ * remove
+ * poll
+ * peek
+ *
+ */
+public class ConcurrentLinkedQueueDemo {
     public static void main(final String[] args) throws InterruptedException {
-
-
-        final BlockingQueue<Integer> arrQueue = new ArrayBlockingQueue<Integer>(100);
+        ConcurrentLinkedQueue<Integer> arrQueue = new ConcurrentLinkedQueue<>();
         Thread producer = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    arrQueue.put(11);
+                    arrQueue.add(11);
                     Thread.sleep(1000);
-                    arrQueue.put(22);
-                    arrQueue.put(33);
+                    arrQueue.add(22);
+                    arrQueue.add(33);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -26,10 +33,10 @@ public class BlockingQueueDemo {
             @Override
             public void run() {
                 try {
-                    arrQueue.put(1);
-                    arrQueue.put(2);
+                    arrQueue.add(1);
+                    arrQueue.add(2);
                     Thread.sleep(1000);
-                    arrQueue.put(3);
+                    arrQueue.add(3);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -42,15 +49,11 @@ public class BlockingQueueDemo {
             public void run() {
                 System.out.println("consumer  start ");
                 while (!arrQueue.isEmpty()) {
-                    try {
-                        Integer take = arrQueue.take();
-                        System.out.println(take);
-                        if (arrQueue.isEmpty())
-                            break;
+                    Integer take = arrQueue.remove();
+                    System.out.println(take);
+                    if (arrQueue.isEmpty())
+                        break;
 
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
                 }
                 System.out.println("consumer  end ");
             }
