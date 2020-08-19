@@ -29,10 +29,12 @@ public class SemaphoreDemo {
         @Override
         public void run() {
             try {
+//                acquire() 表示阻塞并获取许可
                 semaphore.acquire();
                 System.out.println("工人" + this.num + "   占用了一个机器");
                 Thread.sleep(1000);
                 System.out.println("工人" + this.num + "   释放了一个机器");
+//                release() 表示释放许可
                 semaphore.release();
             } catch (InterruptedException e) {
                 e.printStackTrace();
