@@ -15,20 +15,21 @@ class ThreadLocalDemo {
     public static void main(String args[]) throws IOException {
         Thread t1 = new Thread(new MyTask());
         Thread t2 = new Thread(new MyTask());
-
         t1.start();
         t2.start();
-
     }
 
     /*
      * Thread safe format method because every thread will use its own DateFormat
      */
     public static String threadSafeFormat(Date date) {
-        DateFormat formatter = PerThreadFormatter.getDateFormatter();
+//        DateFormat formatter = PerThreadFormatter.getDateFormatter();
+        PerThreadFormatter2 formatter2 = PerThreadFormatter2.getInstances();
+        formatter2.setValue(new SimpleDateFormat("dd/MM/yyyy"));
+        DateFormat formatter = formatter2.getValue();
+
         return formatter.format(date);
     }
-
 }
 
 
@@ -37,9 +38,7 @@ class ThreadLocalDemo {
  * Each Thread will get its own instance of SimpleDateFormat which will not be shared between other threads. *
  */
 class PerThreadFormatter {
-
     private static final ThreadLocal<SimpleDateFormat> dateFormatHolder = new ThreadLocal<SimpleDateFormat>() {
-
         /*
          * initialValue() is called
          */
@@ -57,6 +56,32 @@ class PerThreadFormatter {
     public static DateFormat getDateFormatter() {
         return dateFormatHolder.get();
     }
+
+
+}
+
+class PerThreadFormatter2 {
+    private PerThreadFormatter2() {
+    }
+
+    public static PerThreadFormatter2 instances = new PerThreadFormatter2();
+
+    public static PerThreadFormatter2 getInstances() {
+        return instances;
+    }
+
+    private ThreadLocal<DateFormat> threadLocal = new ThreadLocal();
+
+    public void setValue(DateFormat value) {
+        threadLocal.set(value);
+    }
+
+    public DateFormat getValue() {
+        return threadLocal.get();
+
+    }
+
+
 }
 
 class MyTask implements Runnable {

@@ -12,6 +12,8 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * poll
  * peek
  *
+ * 非阻塞队列无法实现线程等待 这样会导致消费者线程直接执行结束
+ *
  */
 public class ConcurrentLinkedQueueDemo {
     public static void main(final String[] args) throws InterruptedException {
@@ -48,21 +50,22 @@ public class ConcurrentLinkedQueueDemo {
             @Override
             public void run() {
                 System.out.println("consumer  start ");
-                while (!arrQueue.isEmpty()) {
-                    Integer take = arrQueue.remove();
+                while (true){
+                    Integer take = arrQueue.peek();
                     System.out.println(take);
                     if (arrQueue.isEmpty())
                         break;
-
                 }
                 System.out.println("consumer  end ");
             }
         });
 
+
+
+        consumer.start();
+        Thread.sleep(2200);
         producer.start();
         producer2.start();
-        Thread.sleep(2200);
-        consumer.start();
 
     }
 }
