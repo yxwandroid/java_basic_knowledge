@@ -1,4 +1,4 @@
-package com.wilson.java.thread.block;
+package com.wilson.java.thread.block.block;
 
 import java.util.concurrent.ArrayBlockingQueue;
 

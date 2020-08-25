@@ -13,9 +13,9 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * peek
  *
  * 非阻塞队列无法实现线程等待 这样会导致消费者线程直接执行结束
- *
  */
 public class ConcurrentLinkedQueueDemo {
+
     public static void main(final String[] args) throws InterruptedException {
         ConcurrentLinkedQueue<Integer> arrQueue = new ConcurrentLinkedQueue<>();
         Thread producer = new Thread(new Runnable() {
@@ -26,19 +26,6 @@ public class ConcurrentLinkedQueueDemo {
                     Thread.sleep(1000);
                     arrQueue.add(22);
                     arrQueue.add(33);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-        Thread producer2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    arrQueue.add(1);
-                    arrQueue.add(2);
-                    Thread.sleep(1000);
-                    arrQueue.add(3);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -65,7 +52,6 @@ public class ConcurrentLinkedQueueDemo {
         consumer.start();
         Thread.sleep(2200);
         producer.start();
-        producer2.start();
 
     }
 }
