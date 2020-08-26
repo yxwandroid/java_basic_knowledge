@@ -4,6 +4,12 @@ import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
 
+/**
+ *  容量必须是2的幂为什么
+ * Java的%、/操作比&慢10倍左右，因此采用&运算会提高性能。
+ * https://blog.csdn.net/u014532901/article/details/78936283#31-%E5%AE%B9%E9%87%8F%E5%BF%85%E9%A1%BB%E6%98%AF2%E7%9A%84%E5%B9%82
+ */
+
 public class HashMapDemo {
 
     /**

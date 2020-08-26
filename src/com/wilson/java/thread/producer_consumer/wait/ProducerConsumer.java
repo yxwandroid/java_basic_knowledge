@@ -1,4 +1,4 @@
-package com.wilson.java.thread.producer_consumer;
+package com.wilson.java.thread.producer_consumer.wait;
 
 import java.util.Vector;
 
