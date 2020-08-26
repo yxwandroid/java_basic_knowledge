@@ -1,11 +1,16 @@
 package com.wilson.java.algorithm.lookup;
 
 /**
- * 二分查找
- * 对有序数组的查找
+ * 二分查找 又称折半查找
+ * 查找条件
+ *  顺序结构，有序数组
  * 两种方式
  *    1, 使用while循环
  *    2, 是递归的方式进行查找
+ *
+ *  时间复杂度
+ *  O(log2 N)
+ *  https://blog.csdn.net/maoyuanming0806/article/details/78176957
  */
 public class binarySearch {
 
@@ -50,6 +55,16 @@ public class binarySearch {
     }
 
 
+    /**
+     * 提供数据
+     * 有序的数组
+     * 查找元素
+     * 开始查找位置
+     * 结束查找位置
+     * 当mid>value进行前半部分查找 0  mid-1
+     * 当mid<value进行后半部分查找  mid+1  high
+     * 当mid =value的时候返回
+     */
     static int recursionBinarySearch(int[] arr, int value, int low, int high) {
         if (value < arr[low] || value > arr[high] || low > high)
             return -1;
@@ -64,5 +79,9 @@ public class binarySearch {
         }
         return -1;
     }
+
+
+
+
 
 }
