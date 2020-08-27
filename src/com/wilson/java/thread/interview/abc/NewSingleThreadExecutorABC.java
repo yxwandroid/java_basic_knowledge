@@ -2,7 +2,7 @@ package com.wilson.java.thread.interview.abc;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
+//串行打印abc
 public class NewSingleThreadExecutorABC {
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.wilson.java.thread.interview;
+package com.wilson.java.thread.interview.alternatenum;
 
 
 /**
@@ -19,10 +19,7 @@ public class AlternateNumDemo2 {
                     //打印偶数
                     System.out.println(Thread.currentThread().getName() + "--打印偶数-" + count);
                     count++;
-
-
                     object.notifyAll();
-
                     if (count < 100) {
                         try {
                             object.wait();
@@ -30,9 +27,7 @@ public class AlternateNumDemo2 {
                             e.printStackTrace();
                         }
                     }
-
                 }
-
             }
         });
         Thread b = new Thread(() -> {
@@ -52,6 +47,8 @@ public class AlternateNumDemo2 {
 
             }
         });
+
+
         a.start();
         try {
             Thread.sleep(100);

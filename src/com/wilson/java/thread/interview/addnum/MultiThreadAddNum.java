@@ -1,9 +1,17 @@
-package com.wilson.java.thread.interview;
+package com.wilson.java.thread.interview.addnum;
 
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.locks.ReentrantLock;
 
-// 原文链接：https://blog.csdn.net/wzmde007/article/details/79641084
+
+/**
+ * // 原文链接：https://blog.csdn.net/wzmde007/article/details/79641084
+ * //使用三种方式进行多线程的累加
+ *
+ * 对象锁
+ * 类锁
+ * 多线程安全类 AtomicInteger
+ *
+ */
 public class MultiThreadAddNum {
 
     static int count = 0;
@@ -40,12 +48,10 @@ public class MultiThreadAddNum {
         @Override
         public void run() {
             while (true) {
-
                 synchronized (MyRunnable.class) {
                     if (count >= 1000) {
                         break;
                     }
-
                     System.out.println(Thread.currentThread().getName() + ":count:" + (++count));
                     //测试时，线程更容易切换
                     Thread.yield();

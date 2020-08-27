@@ -1,10 +1,20 @@
-package com.wilson.java.thread.interview;
+package com.wilson.java.thread.interview.abc;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-//多线程交替打印ABC十次的实现方法
-class ReentrantLockDemo  {
+/**
+ * 多线程交替打印ABC十次的实现方法
+ * 思路
+ * 首先是使用ReentrantLock 进行多线程的操作
+ * 创建三个线程分别用来打印A,B,C
+ * 创建一个状态标识state来标识那个线程需要等待 那个线程需要唤醒
+ * eg
+ * state = 0
+ * state%3!=0 的时候 线程A就需要await
+ *
+ */
+class ReentrantLockDemo {
 
     public ReentrantLock lock = new ReentrantLock();
     public Condition condition1 = lock.newCondition();

@@ -13,6 +13,7 @@ import java.util.concurrent.CyclicBarrier;
 public class CyclicBarrierDemo {
     public static void main(String[] args) {
         int N = 4;
+//        参数parties指让多少个线程或者任务等待至barrier状态；
 //        CyclicBarrier barrier = new CyclicBarrier(N);
 
         //若是想在所有线程写入操作执行完成之后 进行额外的操作的时候可以使用CyclicBarrier提供的Runnable进行操作
@@ -62,3 +63,6 @@ public class CyclicBarrierDemo {
         }
     }
 }
+
+
+

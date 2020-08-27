@@ -1,6 +1,5 @@
 package com.wilson.java.thread.interview.abc;
 
-import sun.lwawt.macosx.CSystemTray;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;

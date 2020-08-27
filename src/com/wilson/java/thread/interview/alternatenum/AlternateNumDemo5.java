@@ -1,4 +1,4 @@
-package com.wilson.java.thread.interview;
+package com.wilson.java.thread.interview.alternatenum;
 
 
 import java.util.concurrent.locks.Condition;

@@ -41,3 +41,53 @@ public class DeadLockDemo {
     }
 
 }
+
+
+class DeadLock {
+
+    public static Object o1 = new Object();
+    public static Object o2 = new Object();
+
+    public static void main(String[] args) {
+
+        new Thread() {
+            @Override
+            public void run() {
+                synchronized (o1){
+                    try {
+                        Thread.sleep(100);
+                        System.out.println("线程1锁o1");
+                        synchronized(o2){
+                            System.out.println("线程1锁o2");
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+
+            }
+        }.start();
+        new Thread() {
+            @Override
+            public void run() {
+                synchronized (o2){
+                    try {
+                        Thread.sleep(100);
+                        System.out.println("线程2锁o2");
+                        synchronized(o1){
+                            System.out.println("线程2锁o1");
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+
+            }
+        }.start();
+
+
+    }
+
+}

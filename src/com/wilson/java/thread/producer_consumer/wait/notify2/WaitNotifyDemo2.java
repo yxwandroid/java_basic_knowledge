@@ -36,6 +36,8 @@ class Producer extends Thread {
                         e.printStackTrace();
                     }
                 }
+
+                System.out.println("producer---"+i);
                 queue.add(i);
                 queue.notify();
             }
@@ -66,7 +68,7 @@ class Consumer extends Thread {
                 }
 
                 Object poll = queue.poll();
-                System.out.println(poll);
+                System.out.println("---consumer---"+poll);
                 queue.notify();
             }
         }

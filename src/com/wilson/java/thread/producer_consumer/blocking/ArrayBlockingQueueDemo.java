@@ -26,7 +26,7 @@ public class ArrayBlockingQueueDemo {
         public void run() {
             while (true) {
                 try {
-                    arrayBlockingQueue.put("");
+                    arrayBlockingQueue.put("1");
                     System.out.println("进行消息的生成");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -42,7 +42,7 @@ public class ArrayBlockingQueueDemo {
             while (true) {
                 try {
                     String take = arrayBlockingQueue.take();
-                    System.out.println("进行消息的消费");
+                    System.out.println("进行消息的消费--"+take);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
