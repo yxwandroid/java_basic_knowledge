@@ -11,7 +11,7 @@
 
 
 <!-- 1.3 -->
-[多线程面试题]: ./intervew/README.md
+[多线程面试题]: ./interview/README.md
 
 [wilson]: https://github.com/yxwandroid
 
