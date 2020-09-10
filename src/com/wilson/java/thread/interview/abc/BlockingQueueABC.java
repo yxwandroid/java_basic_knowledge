@@ -6,7 +6,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class BlockingQueueABC {
     public static void main(String[] args) {
 
-
         Thread threadA = new Thread(new Runnable() {
             @Override
             public void run() {

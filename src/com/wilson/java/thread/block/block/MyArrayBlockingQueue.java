@@ -12,7 +12,10 @@ import java.util.NoSuchElementException;
 import java.util.Spliterators;
 import java.util.Spliterator;
 
-
+/**
+ * ArrayListBlockQueue 分析
+ * @param <E>
+ */
 public class MyArrayBlockingQueue<E> extends AbstractQueue<E>
         implements BlockingQueue<E>, java.io.Serializable {
 

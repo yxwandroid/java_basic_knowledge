@@ -6,7 +6,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 线程并发容器  HashMap
+ * 线程并发容器  concurrentHashMap
+ *concurrentHashMap 使用的是分段锁技术 提高了并发的访问率
  */
 public class ConcurrentHashMapDemo {
     public static void main(String[] args) {
@@ -64,8 +65,6 @@ public class ConcurrentHashMapDemo {
             putThread2.start();
             putThread.start();
             getAllThread.start();
-            Thread.sleep(1000);
-
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
