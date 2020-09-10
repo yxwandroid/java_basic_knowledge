@@ -31,6 +31,8 @@ class InitXxxService {
     private AtomicBoolean initState = new AtomicBoolean(false);
 
     public void init() {
+        // 若是当前值和期望值相等就更新值为true
+        //参考https://my.oschina.net/haoran100/blog/712485
         if (!initState.compareAndSet(false, true)) {//init once
             return;
         }
