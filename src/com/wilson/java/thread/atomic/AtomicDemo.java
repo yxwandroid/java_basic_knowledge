@@ -4,25 +4,18 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class AtomicDemo {
-
-
     public static void main(String[] args) {
         AtomicBoolean atomicBoolean = new AtomicBoolean(false);
         new Thread(new MyRunnable(atomicBoolean, "thread1")).start();
         new Thread(new MyRunnable(atomicBoolean, "thread2")).start();
         new Thread(new MyRunnable(atomicBoolean, "thread3")).start();
     }
-
-
 }
 
 class MyRunnable implements Runnable {
     private AtomicBoolean atomicBoolean;
     String name;
 
-    public MyRunnable(String name) {
-        this.name = name;
-    }
 
     public MyRunnable(AtomicBoolean atomicBoolean, String name) {
         this.atomicBoolean = atomicBoolean;

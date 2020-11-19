@@ -17,7 +17,7 @@ public class ThreadInterruptDemo2 {
 }
 
 class Thread2 extends Thread {
-    public  Boolean on = false;
+    public volatile boolean on = false;
 
     @Override
     public void run() {

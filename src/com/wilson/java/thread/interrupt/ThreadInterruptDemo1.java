@@ -16,14 +16,10 @@ public class ThreadInterruptDemo1 {
         thread.interrupt();
         System.out.println("线程退出!");
 
-
     }
-
-
 }
 
 class Thread1 extends Thread {
-
     @Override
     public void run() {
         while (true) {

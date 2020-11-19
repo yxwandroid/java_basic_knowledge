@@ -11,16 +11,13 @@ public class NotifyNotifyAllDemo {
     public static void main(String args[]) throws InterruptedException {
         final NotifyNotifyAllDemo test = new NotifyNotifyAllDemo();
 
-        Runnable waitTask = new Runnable(){
-            @Override
-            public void run(){
-                try {
-                    test.shouldGo();
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(NotifyNotifyAllDemo.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                System.out.println(Thread.currentThread() + " finished Execution");
+        Runnable waitTask = () -> {
+            try {
+                test.shouldGo();
+            } catch (InterruptedException ex) {
+                Logger.getLogger(NotifyNotifyAllDemo.class.getName()).log(Level.SEVERE, null, ex);
             }
+            System.out.println(Thread.currentThread() + " finished Execution");
         };
 
         Runnable notifyTask = new Runnable(){

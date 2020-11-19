@@ -38,18 +38,9 @@ public class JoinABC {
             }
         });
 
-
         threadC.start();
         threadB.start();
         threadA.start();
 
-
-//            threadA.join();
-//            threadB.join();
-//            threadC.join();
-
-
     }
-
-
 }

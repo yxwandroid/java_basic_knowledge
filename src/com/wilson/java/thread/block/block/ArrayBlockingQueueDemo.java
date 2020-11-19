@@ -13,7 +13,9 @@ public class ArrayBlockingQueueDemo {
             public void run() {
                 try {
                     arrQueue.put(11);
+                    Thread.sleep(100);
                     arrQueue.put(22);
+                    Thread.sleep(100);
                     arrQueue.put(33);
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
@@ -26,9 +28,11 @@ public class ArrayBlockingQueueDemo {
             public void run() {
                 try {
                     arrQueue.put(1);
+                    Thread.sleep(200);
                     arrQueue.put(2);
                     Thread.sleep(200);
                     arrQueue.put(3);
+                    Thread.sleep(200);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -47,16 +51,21 @@ public class ArrayBlockingQueueDemo {
                         e.printStackTrace();
                     }
 
-                    if (arrQueue.isEmpty())
-                        break;
 
+                    //若是注释掉消费线程会处于阻塞状态
+//                    if (arrQueue.isEmpty()){
+//                        break;
+//                    }
+
+                    System.out.println("--run--");
                 }
 
             }
         });
         consumer.start();
-        Thread.sleep(2200);
+        Thread.sleep(3000);
         producer.start();
+        Thread.sleep(3000);
         producer2.start();
 
     }

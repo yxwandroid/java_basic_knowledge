@@ -1,4 +1,4 @@
-package com.wilson.java.thread;
+package com.wilson.java.thread.threadlocal;
 
 
 import java.io.IOException;
